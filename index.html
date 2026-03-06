@@ -129,14 +129,20 @@ font-weight:700;
 font-size:1.1rem;
 }
 
-/* PROYECTOS */
+/* SECCIONES */
 
-.projects{
+.section{
 padding:5rem 2rem;
 background:rgba(20,20,30,0.3);
 }
 
-.projects-grid{
+.section-title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:3rem;
+}
+
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:2rem;
@@ -144,17 +150,20 @@ max-width:1100px;
 margin:0 auto;
 }
 
-.project-card{
+.card{
 background:rgba(30,30,40,0.7);
 border-radius:15px;
 padding:2rem;
 text-align:center;
 }
 
-.project-card a{
+.card h3{
+margin-bottom:1rem;
+}
+
+.card a{
 color:#00ff9d;
 text-decoration:none;
-font-weight:600;
 }
 
 /* CONTACTO */
@@ -218,7 +227,7 @@ body.light-mode nav a{
 color:#333;
 }
 
-body.light-mode .project-card{
+body.light-mode .card{
 background:#ffffff;
 }
 
@@ -242,7 +251,8 @@ color:#333;
 
 <nav>
 <ul>
-<li><a href="#home">Inicio</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#servicios">Servicios</a></li>
 <li><a href="#proyectos">Proyectos</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
@@ -270,25 +280,62 @@ Explorar Proyectos
 
 </section>
 
-<section class="projects" id="proyectos">
+<section class="section" id="servicios">
 
-<div class="projects-grid">
+<h2 class="section-title">Servicios</h2>
 
-<div class="project-card">
+<div class="grid">
+
+<div class="card">
+<h3>Desarrollo Web</h3>
+<p>Sitios web, landing pages y WordPress.</p>
+</div>
+
+<div class="card">
+<h3>SaaS a Medida</h3>
+<p>Desarrollo de software web para negocios.</p>
+</div>
+
+<div class="card">
+<h3>Soporte Tecnológico</h3>
+<p>Mantenimiento y soporte para oficinas y comercios.</p>
+</div>
+
+<div class="card">
+<h3>Streaming</h3>
+<p>Configuración técnica para radios y streams.</p>
+</div>
+
+<div class="card">
+<h3>Diseño</h3>
+<p>Diseño gráfico y diseño web.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="proyectos">
+
+<h2 class="section-title">Proyectos</h2>
+
+<div class="grid">
+
+<div class="card">
 <h3>TXTRadio</h3>
-<p>Radio experimental basada en texto.</p>
-<a href="https://www.txtradio.site/" target="_blank">Visitar</a>
+<p>Radio experimental online.</p>
+<a href="https://www.txtradio.site/" target="_blank">Ver proyecto</a>
 </div>
 
-<div class="project-card">
-<h3>Cineclub TXT</h3>
-<p>Archivo experimental de cine.</p>
-<a href="https://abtxt.github.io/cineclub/" target="_blank">Visitar</a>
+<div class="card">
+<h3>Cineclub</h3>
+<p>Archivo audiovisual.</p>
+<a href="https://abtxt.github.io/cineclub/" target="_blank">Ver proyecto</a>
 </div>
 
-<div class="project-card">
+<div class="card">
 <h3>Fanzinoteca</h3>
-<p>Repositorio de publicaciones independientes.</p>
+<p>Archivo digital de fanzines.</p>
 <a href="https://github.com/labtxt/fanzinoteca" target="_blank">Ver proyecto</a>
 </div>
 
@@ -299,7 +346,7 @@ Explorar Proyectos
 <section class="contact-section" id="contacto">
 
 <h2 class="section-title">
-Colaboremos
+Contacto
 </h2>
 
 <div class="contact-info">
@@ -329,7 +376,17 @@ Colaboremos
 
 </footer>
 
+<div id="imageModal">
+
+<img id="modalImage">
+
+<button onclick="closeModal()" style="position:absolute;top:20px;right:30px;background:none;border:none;color:#00ff9d;font-size:3rem;cursor:pointer">×</button>
+
+</div>
+
 <script>
+
+/* SCROLL SUAVE */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
@@ -353,6 +410,28 @@ behavior:'smooth'
 });
 
 });
+
+/* MODAL */
+
+function openModal(img){
+
+document.getElementById("modalImage").src=img.src;
+
+document.getElementById("imageModal").style.display="flex";
+
+document.body.style.overflow="hidden";
+
+}
+
+function closeModal(){
+
+document.getElementById("imageModal").style.display="none";
+
+document.body.style.overflow="auto";
+
+}
+
+/* TOGGLE TEMA */
 
 const themeBtn=document.getElementById("themeToggle");
 
