@@ -162,6 +162,8 @@ margin-bottom:1rem;
 }
 
 .card a{
+display:inline-block;
+margin-top:15px;
 color:#00ff9d;
 text-decoration:none;
 }
@@ -210,6 +212,30 @@ align-items:center;
 max-width:90%;
 max-height:90%;
 border-radius:10px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#00ff9d;
+color:#000;
+font-size:1.6rem;
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:1500;
+}
+
+.whatsapp-btn:hover{
+transform:scale(1.08);
 }
 
 /* MODO CLARO */
@@ -288,17 +314,17 @@ Explorar Proyectos
 
 <div class="card">
 <h3>Desarrollo Web</h3>
-<p>Sitios web, landing pages y WordPress.</p>
+<p>Creación de sitios web modernos.</p>
 </div>
 
 <div class="card">
 <h3>SaaS a Medida</h3>
-<p>Desarrollo de software web para negocios.</p>
+<p>Desarrollo de software web personalizado.</p>
 </div>
 
 <div class="card">
-<h3>Soporte Tecnológico</h3>
-<p>Mantenimiento y soporte para oficinas y comercios.</p>
+<h3>Soporte Técnico</h3>
+<p>Mantenimiento tecnológico para oficinas y negocios.</p>
 </div>
 
 <div class="card">
@@ -329,7 +355,7 @@ Explorar Proyectos
 
 <div class="card">
 <h3>Cineclub</h3>
-<p>Archivo audiovisual.</p>
+<p>Archivo audiovisual online.</p>
 <a href="https://abtxt.github.io/cineclub/" target="_blank">Ver proyecto</a>
 </div>
 
@@ -376,13 +402,7 @@ Contacto
 
 </footer>
 
-<div id="imageModal">
-
-<img id="modalImage">
-
-<button onclick="closeModal()" style="position:absolute;top:20px;right:30px;background:none;border:none;color:#00ff9d;font-size:3rem;cursor:pointer">×</button>
-
-</div>
+<a href="https://wa.me/5492920000000" class="whatsapp-btn" target="_blank">💬</a>
 
 <script>
 
@@ -410,26 +430,6 @@ behavior:'smooth'
 });
 
 });
-
-/* MODAL */
-
-function openModal(img){
-
-document.getElementById("modalImage").src=img.src;
-
-document.getElementById("imageModal").style.display="flex";
-
-document.body.style.overflow="hidden";
-
-}
-
-function closeModal(){
-
-document.getElementById("imageModal").style.display="none";
-
-document.body.style.overflow="auto";
-
-}
 
 /* TOGGLE TEMA */
 
