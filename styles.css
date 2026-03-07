@@ -286,6 +286,15 @@ font-size:1rem;
 .section{
 padding:3rem 1.5rem;
 }
+  .card{
+transition:transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+  
 
 .section-title{
 font-size:2rem;
