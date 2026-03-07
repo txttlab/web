@@ -3,482 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textlab — Desarrollo Web & Soluciones Digitales</title>
 
-<title>Textlab</title>
+<link rel="stylesheet" href="styles.css">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2285%22 font-weight=%22bold%22 font-family=%22monospace%22 fill=%22%2300ff9d%22>T</text></svg>">
+<!-- Iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-background:#0a0a0a;
-color:#f0f0f0;
-line-height:1.6;
-overflow-x:hidden;
-transition:background .3s,color .3s;
-}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(10,10,10,0.95);
-backdrop-filter:blur(10px);
-padding:1.5rem 2rem;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
-border-bottom:1px solid rgba(0,255,157,0.1);
-}
-
-.logo{
-font-size:1.8rem;
-font-weight:700;
-color:#00ff9d;
-text-decoration:none;
-}
-
-.logo span{color:#fff;}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:2rem;
-}
-
-nav a{
-color:#ccc;
-text-decoration:none;
-font-weight:500;
-}
-
-nav a:hover{color:#00ff9d;}
-
-.lang button{
-background:none;
-border:none;
-color:#00ff9d;
-cursor:pointer;
-margin-left:10px;
-}
-
-.theme-toggle{
-background:none;
-border:none;
-color:#00ff9d;
-font-size:1.2rem;
-cursor:pointer;
-margin-left:10px;
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 2rem;
-padding-top:80px;
-max-width:900px;
-margin:0 auto;
-}
-
-.hero h1{
-font-size:3.5rem;
-background:linear-gradient(90deg,#fff,#00ff9d);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:1rem;
-}
-
-.subtitle{
-color:#00ff9d;
-font-size:1.5rem;
-font-weight:600;
-margin-bottom:1.5rem;
-}
-
-.tagline{
-font-size:1.2rem;
-color:#aaa;
-max-width:600px;
-margin-bottom:3rem;
-}
-
-.cta-button{
-display:inline-block;
-background:#00ff9d;
-color:#000;
-padding:1rem 2.5rem;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-}
-
-.section{
-padding:5rem 2rem;
-background:rgba(20,20,30,0.3);
-}
-
-.section-title{
-text-align:center;
-font-size:2.5rem;
-margin-bottom:3rem;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:2rem;
-max-width:1100px;
-margin:0 auto;
-}
-
-.card{
-background:rgba(30,30,40,0.7);
-border-radius:15px;
-padding:2rem;
-text-align:center;
-}
-
-.contact-section{
-padding:5rem 2rem;
-background:rgba(15,15,25,0.7);
-text-align:center;
-}
-
-.contact-info{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:3rem;
-max-width:900px;
-margin:3rem auto 0;
-}
-
-footer{
-text-align:center;
-padding:2rem;
-background:rgba(10,10,15,0.9);
-color:#888;
-}
-
-.whatsapp-btn{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#00ff9d;
-color:#000;
-font-size:1.6rem;
-width:55px;
-height:55px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-text-decoration:none;
-}
-
-input,textarea{
-width:100%;
-padding:12px;
-margin-bottom:12px;
-border:none;
-border-radius:6px;
-}
-
-button.form-btn{
-background:#00ff9d;
-color:#000;
-padding:12px 25px;
-border:none;
-border-radius:30px;
-font-weight:700;
-cursor:pointer;
-}
-
-/* DARK/LIGHT MODE */
-
-body.light-mode{
-background:#f5f5f5;
-color:#111;
-}
-
-body.light-mode header{background:#ffffff;}
-body.light-mode nav a{color:#333;}
-body.light-mode .card{background:#ffffff;}
-body.light-mode .section{background:#eeeeee;}
-body.light-mode footer{background:#eaeaea;color:#333;}
-
-/* RESPONSIVE */
-
-@media (max-width:900px){
-
-.hero h1{
-font-size:2.8rem;
-}
-
-.section-title{
-font-size:2rem;
-}
-
-}
-
-@media (max-width:600px){
-
-header{
-flex-direction:column;
-gap:10px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-gap:1rem;
-}
-
-.hero h1{
-font-size:2.2rem;
-}
-
-.subtitle{
-font-size:1.2rem;
-}
-
-.tagline{
-font-size:1rem;
-}
-
-.section{
-padding:3rem 1.5rem;
-}
-
-.contact-info{
-grid-template-columns:1fr;
-gap:2rem;
-}
-
-}
-
-</style>
 </head>
 
 <body>
 
 <header>
 
-<a href="#" class="logo">text<span>.lab</span></a>
+<h1>Textlab</h1>
+<p>Desarrollo Web y Soluciones Digitales para emprendedores y negocios.</p>
 
 <nav>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#servicios">Servicios</a></li>
-<li><a href="#proyectos">Proyectos</a></li>
-<li><a href="#contacto">Contacto</a></li>
-</ul>
-</nav>
+<a href="#servicios">Servicios</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#contacto">Contacto</a>
 
-<div class="lang">
-<button onclick="setLang('es')">ES</button>
-<button onclick="setLang('en')">EN</button>
-<button id="themeToggle" class="theme-toggle">🌙</button>
-</div>
+<button id="toggleLang">EN</button>
+<button id="toggleDark">🌙</button>
+</nav>
 
 </header>
 
-<section class="hero" id="home">
 
-<h1>Textlab</h1>
+<section id="servicios">
 
-<p class="subtitle"
-data-es="Desarrollo Web & Soluciones Digitales"
-data-en="Web Development & Digital Solutions">
-Desarrollo Web & Soluciones Digitales
-</p>
+<h2 data-es="Servicios" data-en="Services">Servicios</h2>
 
-<p class="tagline"
-data-es="Desarrollo Web y Soluciones Digitales para emprendedores y negocios."
-data-en="Web development and digital solutions for entrepreneurs and businesses.">
-Desarrollo Web y Soluciones Digitales para emprendedores y negocios.
-</p>
+<div class="servicios-grid">
 
-<a href="#servicios" class="cta-button">Servicios</a>
+<div class="servicio">
+<h3 data-es="Landing Page" data-en="Landing Page">Landing Page</h3>
+<p data-es="Página web simple para presencia online." data-en="Simple web page for online presence."></p>
+</div>
 
-</section>
+<div class="servicio">
+<h3 data-es="Web Simple" data-en="Simple Website">Web Simple</h3>
+<p data-es="Sitio web profesional para negocios." data-en="Professional website for businesses."></p>
+</div>
 
-<section class="section" id="servicios">
+<div class="servicio">
+<h3 data-es="Tienda Online" data-en="Online Store">Tienda Online</h3>
+<p data-es="E-commerce profesional autogestionable." data-en="Professional self-managed e-commerce."></p>
+</div>
 
-<h2 class="section-title">Servicios</h2>
+<div class="servicio">
+<h3 data-es="Soporte Técnico" data-en="Technical Support">Soporte Técnico</h3>
+</div>
 
-<div class="grid">
+<div class="servicio">
+<h3 data-es="Configuración E-commerce" data-en="E-commerce Setup">Configuración E-commerce</h3>
+</div>
 
-<div class="card"><h3>Landing Page</h3></div>
-<div class="card"><h3>Web Simple</h3></div>
-<div class="card"><h3>Tienda Online</h3></div>
-<div class="card"><h3>WordPress</h3></div>
-<div class="card"><h3>Configuración E-commerce</h3></div>
-<div class="card"><h3>Soporte Técnico</h3></div>
-<div class="card"><h3>Asistencia Tecnológica</h3></div>
+<div class="servicio">
+<h3 data-es="WordPress" data-en="WordPress">WordPress</h3>
+</div>
+
+<div class="servicio">
+<h3 data-es="Asistencia Tecnológica" data-en="Tech Assistance">Asistencia Tecnológica</h3>
+</div>
 
 </div>
 
 </section>
 
-<section class="section" id="proceso">
 
-<h2 class="section-title">Cómo trabajamos</h2>
+<section id="como">
 
-<div class="grid">
+<h2 data-es="Cómo trabajamos" data-en="How we work">Cómo trabajamos</h2>
 
-<div class="card">
+<div class="pasos">
+
+<div class="paso">
 <h3>1</h3>
-<p>Analizamos tu proyecto.</p>
+<p data-es="Contanos tu idea o proyecto." data-en="Tell us about your idea or project."></p>
 </div>
 
-<div class="card">
+<div class="paso">
 <h3>2</h3>
-<p>Desarrollamos la solución.</p>
+<p data-es="Diseñamos la mejor solución." data-en="We design the best solution."></p>
 </div>
 
-<div class="card">
+<div class="paso">
 <h3>3</h3>
-<p>Lanzamos tu proyecto.</p>
+<p data-es="Lanzamos tu proyecto online." data-en="We launch your project online."></p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section" id="proyectos">
 
-<h2 class="section-title">Proyectos</h2>
+<section id="proyectos">
 
-<div class="grid">
+<h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
 
-<div class="card">
-<h3>TXTRadio</h3>
-<a href="https://www.txtradio.site/" target="_blank">Ver proyecto</a>
-</div>
+<ul>
 
-<div class="card">
-<h3>Cineclub</h3>
-<a href="https://abtxt.github.io/cineclub/" target="_blank">Ver proyecto</a>
-</div>
+<li>
+<a href="https://www.txtradio.site/" target="_blank">
+TXT Radio
+</a>
+</li>
 
-<div class="card">
-<h3>Fanzinoteca</h3>
-<a href="https://github.com/labtxt/fanzinoteca" target="_blank">Ver proyecto</a>
-</div>
+<li>
+<a href="https://abtxt.github.io/cineclub/" target="_blank">
+Cineclub
+</a>
+</li>
 
-</div>
+<li>
+<a href="https://github.com/labtxt/fanzinoteca" target="_blank">
+Fanzinoteca
+</a>
+</li>
+
+</ul>
 
 </section>
 
-<section class="contact-section" id="contacto">
 
-<h2 class="section-title">Contacto</h2>
+<section id="contacto">
 
-<div class="contact-info">
+<h2 data-es="Contacto" data-en="Contact">Contacto</h2>
 
-<div>
-<h4>Email</h4>
-<p>emilianoimit@gmail.com</p>
-</div>
+<p>Celular: 2920 27-6985</p>
+<p>Email: emilianoimit@gmail.com</p>
 
-<div>
-<h4>Celular</h4>
-<p>2920 27-6985</p>
-</div>
+<form>
 
-<div>
-<h4>Base</h4>
-<p>Argentina</p>
-</div>
+<input type="text" placeholder="Nombre" required>
 
-</div>
+<input type="email" placeholder="Email" required>
 
-<div style="max-width:700px;margin:40px auto 0;">
+<textarea placeholder="Mensaje" required></textarea>
 
-<form action="https://formspree.io/f/mvgpbdyr" method="POST">
-
-<input type="text" name="nombre" placeholder="Nombre" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="mensaje" placeholder="Mensaje" required></textarea>
-
-<button class="form-btn" type="submit">
-Enviar mensaje
-</button>
+<button type="submit">Enviar</button>
 
 </form>
 
-</div>
-
 </section>
 
-<section class="section">
-
-<h2 class="section-title">Newsletter</h2>
-
-<div style="max-width:600px;margin:0 auto;text-align:center;">
-
-<p style="margin-bottom:25px;color:#aaa;">
-Recibí noticias sobre proyectos y novedades de Textlab.
-</p>
-
-<form action="https://formspree.io/f/mvgpbdyr" method="POST">
-
-<input type="email" name="email" placeholder="Tu email" required>
-
-<button class="form-btn" type="submit">
-Suscribirme
-</button>
-
-</form>
-
-</div>
-
-</section>
 
 <footer>
-© 2026 Textlab — Desarrollo Web & Soluciones Digitales
+
+<p>© 2026 Textlab</p>
+
 </footer>
 
-<a href="https://wa.me/5492920276985" class="whatsapp-btn" target="_blank">💬</a>
 
-<script>
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/542920276985" class="whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
 
-function setLang(lang){
-document.querySelectorAll("[data-es]").forEach(el=>{
-el.textContent=el.getAttribute("data-"+lang)
-})
-}
 
-const themeBtn=document.getElementById("themeToggle")
-
-if(localStorage.getItem("theme")==="light"){
-document.body.classList.add("light-mode")
-themeBtn.textContent="☀️"
-}
-
-themeBtn.onclick=function(){
-
-document.body.classList.toggle("light-mode")
-
-if(document.body.classList.contains("light-mode")){
-localStorage.setItem("theme","light")
-themeBtn.textContent="☀️"
-}else{
-localStorage.setItem("theme","dark")
-themeBtn.textContent="🌙"
-}
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
