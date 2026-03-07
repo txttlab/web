@@ -1,28 +1,18 @@
-function setLang(lang){
+let currentLang = "es"
 
-document.querySelectorAll("[data-es]").forEach(el=>{
-el.textContent=el.getAttribute("data-"+lang)
+document.getElementById("toggleLang").onclick = () => {
+
+currentLang = currentLang === "es" ? "en" : "es"
+
+document.querySelectorAll("[data-es]").forEach(el => {
+el.textContent = el.getAttribute("data-" + currentLang)
 })
 
 }
 
-const themeBtn=document.getElementById("themeToggle")
 
-if(localStorage.getItem("theme")==="light"){
-document.body.classList.add("light-mode")
-themeBtn.textContent="☀️"
-}
+document.getElementById("toggleDark").onclick = () => {
 
-themeBtn.onclick=function(){
-
-document.body.classList.toggle("light-mode")
-
-if(document.body.classList.contains("light-mode")){
-localStorage.setItem("theme","light")
-themeBtn.textContent="☀️"
-}else{
-localStorage.setItem("theme","dark")
-themeBtn.textContent="🌙"
-}
+document.body.classList.toggle("dark")
 
 }
