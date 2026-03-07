@@ -1,13 +1,12 @@
 body{
-font-family:Arial, sans-serif;
+font-family: Arial, sans-serif;
 margin:0;
-padding:0;
 line-height:1.6;
 }
 
 header{
 text-align:center;
-padding:40px;
+padding:40px 20px;
 }
 
 nav{
@@ -17,29 +16,38 @@ margin-top:20px;
 nav a{
 margin:0 10px;
 text-decoration:none;
+font-weight:bold;
+}
+
+nav button{
+margin-left:10px;
+cursor:pointer;
 }
 
 section{
-padding:40px;
 max-width:1000px;
 margin:auto;
+padding:40px 20px;
 }
 
 .servicios-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
+margin-top:20px;
 }
 
 .servicio{
 border:1px solid #ddd;
 padding:20px;
+border-radius:6px;
 }
 
 .pasos{
 display:flex;
 gap:20px;
 flex-wrap:wrap;
+margin-top:20px;
 }
 
 .paso{
@@ -48,10 +56,12 @@ min-width:200px;
 border:1px solid #ddd;
 padding:20px;
 text-align:center;
+border-radius:6px;
 }
 
 ul{
 padding:0;
+margin-top:20px;
 }
 
 ul li{
@@ -61,7 +71,9 @@ margin:10px 0;
 
 footer{
 text-align:center;
-padding:20px;
+padding:30px;
+margin-top:40px;
+border-top:1px solid #eee;
 }
 
 form{
@@ -69,35 +81,34 @@ display:flex;
 flex-direction:column;
 gap:10px;
 max-width:400px;
+margin-top:20px;
 }
 
-input, textarea{
+input,textarea{
 padding:10px;
 border:1px solid #ccc;
+border-radius:4px;
 }
 
 button{
 padding:10px;
+border:none;
 cursor:pointer;
 }
 
-
-/* WhatsApp */
-
 .whatsapp{
 position:fixed;
-right:20px;
 bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
-font-size:28px;
-padding:14px;
+font-size:26px;
+padding:15px;
 border-radius:50%;
 text-decoration:none;
 }
 
-
-/* Dark mode */
+/* DARK MODE */
 
 .dark{
 background:#111;
@@ -105,5 +116,14 @@ color:white;
 }
 
 .dark a{
-color:#9ad;
+color:#8ecbff;
+}
+
+.dark .servicio,
+.dark .paso{
+border:1px solid #444;
+}
+
+.dark footer{
+border-top:1px solid #444;
 }
