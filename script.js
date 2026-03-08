@@ -25,11 +25,13 @@ localStorage.setItem("theme","dark");
 
 /* LANGUAGE */
 
-const langSwitcher=document.getElementById("languageSwitcher");
+const langButtons=document.querySelectorAll(".lang-btn");
 
-langSwitcher.addEventListener("change",function(){
+langButtons.forEach(btn=>{
 
-const lang=this.value;
+btn.addEventListener("click",function(){
+
+const lang=this.dataset.lang;
 
 document.querySelectorAll("[data-es]").forEach(el=>{
 el.textContent=el.getAttribute("data-"+lang);
@@ -39,11 +41,11 @@ localStorage.setItem("lang",lang);
 
 });
 
+});
+
 const savedLang=localStorage.getItem("lang");
 
 if(savedLang){
-
-langSwitcher.value=savedLang;
 
 document.querySelectorAll("[data-es]").forEach(el=>{
 el.textContent=el.getAttribute("data-"+savedLang);
