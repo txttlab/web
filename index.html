@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Textlab — Desarrollo Web & Soluciones Digitales</title>
+<title>Textlab</title>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2285%22 font-weight=%22bold%22 font-family=%22monospace%22 fill=%22%2300ff9d%22>T</text></svg>">
 
 <link rel="stylesheet" href="styles.css">
 
@@ -19,20 +21,16 @@
 
 <nav>
 <ul>
-<li><a href="#home" data-es="Inicio" data-en="Home">Inicio</a></li>
+<li><a href="#home" data-es="Home" data-en="Home">Home</a></li>
 <li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
 <li><a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
 <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
 </ul>
 </nav>
 
-<div class="header-buttons">
-
-<button class="lang-btn" data-lang="es">ES</button>
-<button class="lang-btn" data-lang="en">EN</button>
-
+<div class="header-controls">
+<button id="langToggle" class="lang-toggle">ES</button>
 <button id="themeToggle" class="theme-toggle">🌙</button>
-
 </div>
 
 </header>
@@ -43,7 +41,7 @@
 
 <p class="subtitle"
 data-es="Desarrollo Web y Soluciones Digitales"
-data-en="Web Development & Digital Solutions">
+data-en="Web Development and Digital Solutions">
 Desarrollo Web y Soluciones Digitales
 </p>
 
@@ -52,6 +50,12 @@ data-es="Soluciones digitales para emprendedores y negocios."
 data-en="Digital solutions for entrepreneurs and businesses.">
 Soluciones digitales para emprendedores y negocios.
 </p>
+
+<a href="#proyectos" class="cta-button"
+data-es="Explorar Proyectos"
+data-en="Explore Projects">
+Explorar Proyectos
+</a>
 
 </section>
 
@@ -65,12 +69,25 @@ Servicios
 
 <div class="grid">
 
-<div class="card"><h3>Landing Page</h3></div>
-<div class="card"><h3>Web Simple</h3></div>
-<div class="card"><h3>Tienda Online</h3></div>
-<div class="card"><h3>WordPress</h3></div>
-<div class="card"><h3>Configuración E-commerce</h3></div>
-<div class="card"><h3>Asistencia Tecnológica</h3></div>
+<div class="card">
+<h3 data-es="Desarrollo Web" data-en="Web Development">Desarrollo Web</h3>
+<p data-es="Creación de sitios web modernos." data-en="Modern website development.">Creación de sitios web modernos.</p>
+</div>
+
+<div class="card">
+<h3 data-es="Soporte Técnico" data-en="Technical Support">Soporte Técnico</h3>
+<p data-es="Mantenimiento tecnológico para oficinas y negocios." data-en="Technology maintenance for offices and businesses.">Mantenimiento tecnológico para oficinas y negocios.</p>
+</div>
+
+<div class="card">
+<h3 data-es="Streaming" data-en="Streaming">Streaming</h3>
+<p data-es="Configuración técnica para radios y streams." data-en="Technical setup for radio and streaming.">Configuración técnica para radios y streams.</p>
+</div>
+
+<div class="card">
+<h3 data-es="Diseño" data-en="Design">Diseño</h3>
+<p data-es="Diseño gráfico y diseño web." data-en="Graphic and web design.">Diseño gráfico y diseño web.</p>
+</div>
 
 </div>
 
@@ -86,9 +103,29 @@ Proyectos
 
 <div class="grid">
 
-<div class="card"><h3>TXTRadio</h3></div>
-<div class="card"><h3>Cineclub</h3></div>
-<div class="card"><h3>Fanzinoteca</h3></div>
+<div class="card">
+<h3>TXTRadio</h3>
+<p data-es="Radio experimental online." data-en="Experimental online radio.">Radio experimental online.</p>
+<a href="https://www.txtradio.site/" target="_blank"
+data-es="Ver proyecto"
+data-en="View project">Ver proyecto</a>
+</div>
+
+<div class="card">
+<h3>Cineclub</h3>
+<p data-es="Archivo audiovisual online." data-en="Online audiovisual archive.">Archivo audiovisual online.</p>
+<a href="https://abtxt.github.io/cineclub/" target="_blank"
+data-es="Ver proyecto"
+data-en="View project">Ver proyecto</a>
+</div>
+
+<div class="card">
+<h3>Fanzinoteca</h3>
+<p data-es="Archivo digital de fanzines." data-en="Digital fanzine archive.">Archivo digital de fanzines.</p>
+<a href="https://github.com/labtxt/fanzinoteca" target="_blank"
+data-es="Ver proyecto"
+data-en="View project">Ver proyecto</a>
+</div>
 
 </div>
 
@@ -104,8 +141,20 @@ Contacto
 
 <div class="contact-info">
 
-<p>Email: emilianoimit@gmail.com</p>
-<p>Celular: 2920 27-6985</p>
+<div>
+<h4>Email</h4>
+<p>hola@teletextlab.dev</p>
+</div>
+
+<div>
+<h4 data-es="Horario" data-en="Schedule">Horario</h4>
+<p data-es="Lunes a Viernes" data-en="Monday to Friday">Lunes a Viernes</p>
+</div>
+
+<div>
+<h4 data-es="Base" data-en="Base">Base</h4>
+<p data-es="Laboratorio Digital" data-en="Digital Lab">Laboratorio Digital</p>
+</div>
 
 </div>
 
@@ -113,12 +162,19 @@ Contacto
 
 <footer>
 
-<p>© 2026 Textlab</p>
+<span data-es="© 2026 Textlab — Agencia de Soluciones Digitales"
+data-en="© 2026 Textlab — Digital Solutions Agency">
+© 2026 Textlab — Agencia de Soluciones Digitales
+</span>
 
 </footer>
 
+<a href="https://wa.me/5492920000000" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+
 <a href="https://wa.me/5492920276985" class="whatsapp-btn" target="_blank">
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg">
+</a>
+
 </a>
 
 <script src="script.js"></script>
