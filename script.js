@@ -19,11 +19,6 @@ behavior: 'smooth'
 
 });
 
-
-/* =========================
-MODO OSCURO
-========================= */
-
 const themeBtn = document.getElementById("themeToggle");
 
 function setTheme(theme){
@@ -55,11 +50,6 @@ localStorage.setItem("theme", savedTheme);
 setTheme(savedTheme);
 
 });
-
-
-/* =========================
-IDIOMA ES / EN
-========================= */
 
 const langBtn = document.getElementById("langToggle");
 
